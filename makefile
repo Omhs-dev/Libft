@@ -7,18 +7,18 @@ CC = gcc
 NAME = libft.a
 
 
+all: $(NAME)
+
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-all: $(NAME)
-
 $(OBJS) : $(SRCS)
 	$(CC) $(CFLAGS) -c $(SRCS)
-	
+
 clean :
 	rm -f $(OBJS)
-	
+
 fclean : clean
 	rm -f $(NAME)
-	
+
 re : fclean all

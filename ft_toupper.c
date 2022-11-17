@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:15:07 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/17 14:52:17 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/17 14:59:50 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/17 15:41:23 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-#include <stdio.h>
-
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_toupper(int c)
 {
-	int i;
-
-	if (dstsize > 0)
+	if (c >= 97 && c <= 122)
 	{
-		while (src[i] != '\0')
+		int i;
+		i = 0;
+		while (c && (i >= 65 && i <=90))
 		{
-		{
-			dst[i] = src[i];
+			c = i;
 			i++;
 		}
-		}
-
 	}
-	dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (c);
+}
+
+int main()
+{
+	char lower;
+	lower = 'v';
+	ft_toupper(lower);
+	printf("%c", lower);
 }
