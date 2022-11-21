@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:15:07 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/21 21:29:39 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/21 16:05:26 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/21 17:16:46 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 #include <string.h>
-#include <stdio.h>
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int ft_atoi(const char *str)
 {
 	int i;
-
-	if (dstsize > 0)
-	{
-		while (src[i] != '\0')
-		{
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		}
-	}
-	dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	
+	i = 0;
+	while (str[i] >= '1' && str[i] <= '9')
+		*str = *str - 48;
+	return (0);
 }
-int main()
-{
-	char *string;
-	char buffer[19];
-	int r;
 
-	string = "Hello there, Venus";
-	r = strlcpy(buffer, string, 8);
-	printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
+int	main()
+{
+	int val;
+	char str[20];
+
+	strcpy(str, "98993489");
+	val = ft_atoi(str);
+	printf("String value = %s, Int value = %d\n", str, val);
+	strcpy(str, "tutorialspoint.com");
+	val = ft_atoi(str);
+	printf("String value = %s, Int value = %d\n", str, val);
 	return (0);
 }
