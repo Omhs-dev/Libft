@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:10:30 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/07 22:20:27 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:43:11 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,4 @@ int	ft_tolower(int c);
 int	ft_toupper(int c);
 void ft_putstr_fd(char *s, int fd);
 void ft_putchar_fd(char c, int fd);
+char	*ft_strdup(const char *s);

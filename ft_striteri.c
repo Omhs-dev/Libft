@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnulm.c                                      :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 22:51:10 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/07 23:01:27 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/25 18:59:29 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/25 20:19:57 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
-
-int ft_isalnum(int an)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (ft_isalpha(an) || ft_isdigit(an))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		(*f)(i, s);
+		i++;
+	}
+	return ;
 }
-
-// int main(void)
-// {
-// 	int an;
-
-// 	an = 'A';
-// 	if (ft_isalnum(an))
-// 		write(1, "alnum", 5);
-// 	else
-// 		write(1, "not", 3);
-// }

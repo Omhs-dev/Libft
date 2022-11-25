@@ -6,16 +6,16 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:03:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/15 19:34:29 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:28:09 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-int ft_isascii(int as)
+int	ft_isascii(int as)
 {
-    return (as >= 0 && as <= 0127);
+	return (as >= 0 && as <= 0127);
 }
 
 // int main(void)

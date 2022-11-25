@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "unistd.h": "c",
-        "libft.h": "c",
-        "__config": "c"
-    },
-    "editor.tabCompletion": "on",
-    "editor.stickyTabStops": true
-}

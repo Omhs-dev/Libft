@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:15:07 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/21 21:29:39 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:35:58 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	int srclen;
+	size_t	i;
+	int	srclen;
 
 	srclen = ft_strlen((char *)src);
 	i = 0;

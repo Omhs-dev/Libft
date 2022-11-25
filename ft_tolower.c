@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:24:51 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/17 19:00:45 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:37:37 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-int main()
-{
-	char lower;
+// int main()
+// {
+// 	char lower;
 
-	lower = 'E';
-	printf("%c", ft_tolower(lower));
-}
+// 	lower = 'E';
+// 	printf("%c", ft_tolower(lower));
+// }
