@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:04:17 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/20 22:42:25 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:31:10 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i]) 
+	while (s[i])
 	{
 		if (c == s[i])
 			return ((char *)s + i);

@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 23:14:59 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/20 18:33:03 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:36:23 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <string.h>
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *str1;
-	char *str2;
-	int len1;
-	int len2;
-	size_t i;
+	char	*str1;
+	char	*str2;
+	int	len1;
+	int	len2;
+	size_t	i;
 
 	len1 = ft_strlen((char *)s1);
 	len2 = ft_strlen((char *)s2);

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 14:06:58 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/08 21:57:10 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/25 17:48:18 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/25 17:55:28 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
-// #include "libft.h"
-
-// int main(void)
-// {
-// 	char a;
-// 	int d;
-
-// 	a = '-';
-// 	b = '9';
-// 	if (ft_isalpha(a))
-// 		write(1, "alpha", 3);
-// 	if (ft_isdigit(d))
-// 		write(1, "digit", 4);
-// }
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+	ft_putchar_fd("\n", fd);
+	if (!s)
+		return ;
+}

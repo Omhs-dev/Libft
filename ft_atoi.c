@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:05:26 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/21 17:16:46 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:27:17 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "libft.h"
 #include <string.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int res;
-	int sign;
-	
+	int	i;
+	int	res;
+	int	sign;
+
 	res = 0;
 	sign = 1;
 	i = 0;
@@ -28,7 +28,7 @@ int ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign *= -1;	
+			sign *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -39,13 +39,13 @@ int ft_atoi(const char *str)
 	return (res * sign);
 }
 
-int	main()
-{
-    char str[] = "er584526";
-    char str1[] = "584526";
-    int val = ft_atoi(str);
-    int val1 = ft_atoi(str1);
-    printf("%d\n", val);
-    printf("%d\n", val1);
-    return 0;
-}
+// int	main()
+// {
+//     char str[] = "er584526";
+//     char str1[] = "584526";
+//     int val = ft_atoi(str);
+//     int val1 = ft_atoi(str1);
+//     printf("%d\n", val);
+//     printf("%d\n", val1);
+//     return 0;
+// }

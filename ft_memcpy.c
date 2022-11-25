@@ -12,14 +12,15 @@
 
 #include <stdio.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t      i;
-	char     *des;
-	char    *sr;
+	size_t	i;
+	char	*des;
+	char	*sr;
 
 	des = (char *)dest;
 	sr = (char *)src;
+	i = 0;
 	while (i < n)
 	{
 		des[i] = sr[i];
