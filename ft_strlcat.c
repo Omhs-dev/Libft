@@ -10,12 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+#include <stdio.h>
 #include "libft.h"
 
-unsigned int ft_strlcpy(char *dst, const char *src, unsigned int dstsize)
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int        i;
-	
+	size_t i;
+	size_t j;
+	int lendst;
+	int lensrc;
+
+	lendst = ft_strlen(dst);
+	lensrc = ft_strlen((char *)src);
 	i = 0;
-	ft_strlen();
+	j = lendst;
+	while (src[i] && i < dstsize - lendst - 1)
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	if (dstsize < lendst)
+		return (dstsize + lensrc);
+	
+	dst[j] = '\0';
+	return (lendst + lensrc);
+}
+
+int main()
+{
+	char first[] = "This is ";
+    char last[] = "a potentially long string";
+    int r;
+    int size = 64;
+    char buffer[size];
+
+    strcpy(buffer,first);
+    r = ft_strlcat(buffer,last,size);
+
+    puts(buffer);
+    printf("Value returned: %d\n",r);
+    if( r > size )
+        puts("String truncated");
+    else
+        puts("String was fully copied");
+
+    return(0);
 }

@@ -18,13 +18,13 @@ int ft_isascii(int as)
     return (as >= 0 && as <= 0127);
 }
 
-int main(void)
-{
-    int as;
+// int main(void)
+// {
+//     int as;
 
-    as = '1';
-    if (ft_isascii(as))
-        write(1, "ascii", 5);
-    else
-        write(1, "not", 3);
-}
+//     as = '1';
+//     if (ft_isascii(as))
+//         write(1, "ascii", 5);
+//     else
+//         write(1, "not", 3);
+// }

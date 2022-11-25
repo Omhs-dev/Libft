@@ -15,20 +15,19 @@
 
 int ft_isalnum(int an)
 {
-	if (((an >= 97) && (an <= 122) || (an >= 65) && (an <= 90))
-	|| (an >= '0' && an <= '9'))
+	if (ft_isalpha(an) || ft_isdigit(an))
 		return (1);
 	else
 		return (0);
 }
 
-int main(void)
-{
-	int an;
+// int main(void)
+// {
+// 	int an;
 
-	an = '*';
-	if (ft_isalnum(an))
-		write(1, "alnum", 5);
-	else
-		write(1, "not", 3);
-}
+// 	an = 'A';
+// 	if (ft_isalnum(an))
+// 		write(1, "alnum", 5);
+// 	else
+// 		write(1, "not", 3);
+// }

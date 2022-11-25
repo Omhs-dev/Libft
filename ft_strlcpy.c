@@ -10,37 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
+	size_t i;
+	int srclen;
 
-	if (dstsize > 0)
+	srclen = ft_strlen((char *)src);
+	i = 0;
+	while (src[i] && dstsize > 0 && i < dstsize - 1)
 	{
-		while (src[i] != '\0')
-		{
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		}
+		dst[i] = src[i];
+		i++;
 	}
 	dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	return (srclen);
 }
-int main()
-{
-	char *string;
-	char buffer[19];
-	int r;
+// int main()
+// {
+// 	char *string;
+// 	char buffer[19];
+// 	int r;
 
-	string = "Hello there, Venus";
-	r = strlcpy(buffer, string, 8);
-	printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
-	return (0);
-}
+// 	string = "Hello there, Venus";
+// 	r = ft_strlcpy(buffer, string, 10);
+// 	printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
+// 	return (0);
+// }

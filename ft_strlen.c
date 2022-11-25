@@ -23,10 +23,10 @@ int ft_strlen(char *str)
 	return (a);
 }
 
-int main(void)
-{
-	char *as;
+// int main(void)
+// {
+// 	char *as;
 
-	as = "cinquqnte";
-	printf("%d", ft_strlen(as));
-}
+// 	as = "cinquqnte";
+// 	printf("%d", ft_strlen(as));
+// }
