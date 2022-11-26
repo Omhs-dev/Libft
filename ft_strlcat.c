@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 20:44:31 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/15 22:33:13 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:46:34 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
-	int lendst;
-	int lensrc;
+	size_t	i;
+	size_t	j;
+	size_t	lendst;
+	size_t	lensrc;
 
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen((char *)src);
@@ -31,30 +31,29 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 		j++;
 	}
-	if (dstsize < lendst)
+	if (dstsize <= lendst)
 		return (dstsize + lensrc);
-	
 	dst[j] = '\0';
 	return (lendst + lensrc);
 }
 
-int main()
-{
-	char first[] = "This is ";
-    char last[] = "a potentially long string";
-    int r;
-    int size = 64;
-    char buffer[size];
+// int main()
+// {
+// 	char first[] = "This is ";
+//     char last[] = "a potentially long string";
+//     int r;
+//     int size = 64;
+//     char buffer[size];
 
-    strcpy(buffer,first);
-    r = ft_strlcat(buffer,last,size);
+//     strcpy(buffer,first);
+//     r = ft_strlcat(buffer,last,size);
 
-    puts(buffer);
-    printf("Value returned: %d\n",r);
-    if( r > size )
-        puts("String truncated");
-    else
-        puts("String was fully copied");
+//     puts(buffer);
+//     printf("Value returned: %d\n",r);
+//     if( r > size )
+//         puts("String truncated");
+//     else
+//         puts("String was fully copied");
 
-    return(0);
-}
+//     return(0);
+// }

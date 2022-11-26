@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 20:46:53 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 18:39:34 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/07 22:51:10 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/25 18:37:59 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_isalnum(int an)
 {
-	size_t	i;
-	char	*des ;
-	char	*sr;
-
-	des = (char *)dst;
-	sr = (char *)src;
-	if (des > sr)
-	{
-		i = (int)len - 1;
-		while (i >= 0)
-		{
-			des[i] = sr[i];
-			i--;
-		}
-	}
-	ft_memcpy(des, sr, len);
-	return (dst);
+	if (ft_isalpha(an) || ft_isdigit(an))
+		return (1);
+	else
+		return (0);
 }
+
+// int main(void)
+// {
+// 	int an;
+
+// 	an = 'A';
+// 	if (ft_isalnum(an))
+// 		write(1, "alnum", 5);
+// 	else
+// 		write(1, "not", 3);
+// }
