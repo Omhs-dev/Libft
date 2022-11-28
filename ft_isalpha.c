@@ -6,11 +6,12 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 14:00:33 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:28:00 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/27 21:01:18 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_isalpha(char a)
 {
@@ -19,3 +20,4 @@ int	ft_isalpha(char a)
 	else
 		return (0);
 }
+
