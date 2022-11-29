@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 23:14:59 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:36:23 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:12:52 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	int	len2;
 	size_t	i;
 
-	len1 = ft_strlen((char *)s1);
-	len2 = ft_strlen((char *)s2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	str1 = (char *)s1;
 	str2 = (char *)s2;
 	i = 0;

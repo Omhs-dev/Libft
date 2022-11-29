@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 19:42:01 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/27 14:33:33 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:12:58 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] && char_in(s1[start], set))
 		start++;
-	end = ft_strlen((char *)s1);
+	end = ft_strlen(s1);
 	while (end > start && char_in(s1[end - 1], set))
 		end--;
 	dst = (char *)malloc(sizeof(*s1) * (end - start + 1));

@@ -6,62 +6,89 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 20:23:06 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/28 02:05:57 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:12:39 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int ft_isspace(char c)
+static int char_delimeter(char c, char dlm)
 {
-	if (c == ' ' || c == '\n' || c == '\n' || c == '\t'
-		|| c == '\v' || c == '\f' || c == '\r' || c == '\0')
+	if (c == dlm || c == ' ' || c == '\n' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\f' || c == '\r')
 		return (1);
 	else
 		return (0);
 }
 
-static int	count_word(char *c)
+/*
+	those comments are valid
+*/
+// static int ft_isdelimiter(char c, char delimiter)
+// {
+// 	if  (c == delimiter)
+// 		return (1);
+// 	return (0);
+// }
+
+static int	count_word(const char *c, char dlm)
 {
-	int count;
+	int	count;
+	int	i;
 
 	count = 0;
-	int i;
 	i = 0;
 	while (c[i] != '\0')
 	{
-		if(!ft_isspace(c[i]) && ft_isspace(c[i + 1]))
+		if (!char_delimeter(c[i], dlm)
+			&& (char_delimeter(c[i + 1], dlm) || !(c[i + 1])))
 			count++;
 		i++;
 	}
 	return (count);
 }
 
-int main(void)
+static char *get_words(char const *string, char c)
 {
-	char *as;
+	char *dst;
+	int word; //content of dst
 
-	as = "one two one";
-	printf("%d", count_letter(as));
-}
-
-char **ft_split(char const *s, char c)
-{
-	int i;
-	char *str;
-	int lett_count;
-
-	str = (char *)malloc(sizeof(char) * (count_word(s) + 1));
-	lett_count = ft_strlen(str[i]);
-	i = 0;
-	while (str)
+	word = 0;
+	while (string[word] && string[word] != c)
+		word++;
+	//memorie for each word
+	dst = (char *)malloc(sizeof(char) * word + 1);
+	if (!dst)
+		return (NULL);
+	word = 0;
+	while (string[word] && string[word] != c)
 	{
-		str[i] = (char *)malloc(sizeof(char) * lett_count);
-		i++;
+		dst[word] = string[word];
+		word++;
 	}
-	return (str);
+	dst[word] = 0;
+	return (dst);
 }
 
+char **ft_split(char const *s, char c) //c delimiter
+{
+	char **array_str;
+	int i;
 
+	array_str = malloc(sizeof(char *) * (count_word(s, c) + 1));
+	i = 0;
+	if (s[i])
+	{
+		//1. create word and assign to the elemnt 0 of the array
+		array_str[i++] = get_words(s, c);
+		//2. move pointer to the next word
+		while (s[i] && s[i] != c)
+			i++;
+		while (s[i] && s[i] == c)
+			i++;
+	}
+	array_str[i] = 0;
+	return (array_str);
+}
 

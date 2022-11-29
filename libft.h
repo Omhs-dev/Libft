@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:10:30 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/27 14:35:06 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:14:21 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int ft_strlen(char *str);
+int ft_strlen(const char *str);
 int ft_isalpha(char a);
 int ft_isdigit(int d);
 int ft_isalnum(int an);
@@ -43,5 +43,10 @@ void ft_putchar_fd(char c, int fd);
 char	*ft_strdup(const char *s);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s1, char const *set);
+void	ft_putendl_fd(char *s, int fd);
+char **ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

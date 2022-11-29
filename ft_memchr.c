@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:48:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/20 21:00:20 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:12:36 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // 	const char ch = 'm';
 // 	char *ret;
 
-// 	ret = ft_memchr(str, ch, ft_strlen((char *)str));
+// 	ret = ft_memchr(str, ch, ft_strlen(str));
 // 	printf("String after |%c| is - |%s|\n", ch, ret);
 // 	return (0);
 // }

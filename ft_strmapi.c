@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 15:56:32 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 15:56:32 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/29 01:33:18 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/29 01:33:18 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	n;
-	char	*newsr;
+	size_t i;
+	size_t len;
+	char *dst;
 
-	n = ft_strlen(s);
-	newsr = (char *)malloc((n + 1) * sizeof(char));
-	if (!newsr)
+	len = ft_strlen(s);
+	dst = (char *)malloc(sizeof(char) * (len + 1));
+	if (!dst)
 		return (NULL);
-	ft_strlcpy(newsr, s, n);
-	return (newsr);
+	i = 0;
+	while (s[i])
+	{
+		dst[i] = (*f)(i, s[i]);
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
-
-// int main()
-// {
-//     char source[] = "GeeksForGeeks";
-//     char* target = ft_strdup(source);
-//     printf("%s\n", target);
-//     return 0;
-// }

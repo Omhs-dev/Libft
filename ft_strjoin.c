@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 17:48:18 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/29 01:12:38 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/11/29 01:27:36 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/11/29 01:28:24 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	while (*s)
+	char *dst;
+	int len;
+	size_t i;
+	size_t j;
+
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	dst = (char *)malloc(sizeof(*s1) + len);
+	if (!dst)
+		return (NULL);
+	i = 0;
+	while (*s1)
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		dst[i] = s1[i];
+		i++;
 	}
-	ft_putchar_fd('\n', fd);
-	if (!s)
-		return ;
+	j = 0;
+	while (s2[j])
+	{
+		dst[i + j] = s2[j];
+		j++;
+	}
+	dst[j] = 0;
+	return (dst);
 }

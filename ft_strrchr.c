@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:21:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:37:30 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:19:19 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	int	len;
 
 	i = 0;
-	len = ft_strlen((char *)s);
+	len = ft_strlen(s);
 	while (len--)
 	{
 		if (c == s[len])

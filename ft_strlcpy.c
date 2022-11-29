@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 01:15:07 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:35:58 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/29 01:12:48 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	int	srclen;
 
-	srclen = ft_strlen((char *)src);
+	srclen = ft_strlen(src);
 	i = 0;
 	while (src[i] && dstsize > 0 && i < dstsize - 1)
 	{
