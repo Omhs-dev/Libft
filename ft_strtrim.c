@@ -6,16 +6,15 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 19:42:01 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/29 01:12:58 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 19:35:55 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-static int char_in(char c, char const *set)
+static int	char_in(char c, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -27,12 +26,12 @@ static int char_in(char c, char const *set)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *dst;
-	size_t i;
-	size_t start;
-	size_t end;
+	char	*dst;
+	size_t	i;
+	size_t	start;
+	size_t	end;
 
 	start = 0;
 	while (s1[start] && char_in(s1[start], set))

@@ -6,11 +6,10 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:33:39 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/29 01:17:05 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:39:46 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_strlen(const char *str)
@@ -22,4 +21,3 @@ int	ft_strlen(const char *str)
 		a++;
 	return (a);
 }
-

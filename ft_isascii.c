@@ -6,25 +6,28 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:03:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:28:09 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:18:15 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_isascii(int as)
 {
-	return (as >= 0 && as <= 0127);
+	if (as >= 0 && as <= 127)
+		return (1);
+	else
+		return (0);
 }
 
-// int main(void)
+// int main()
 // {
 //     int as;
 
-//     as = '1';
+//     as = '\t';
 //     if (ft_isascii(as))
 //         write(1, "ascii", 5);
 //     else
 //         write(1, "not", 3);
+//     return(0);
 // }

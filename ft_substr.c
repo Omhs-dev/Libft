@@ -11,26 +11,26 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *dest;
-	size_t lenn;
-	size_t i;
-	size_t n;
+	char	*dest;
+	size_t	i;
+	size_t	n;
 
 	if (!s)
-		return (NULL);	
-	lenn = ft_strlen(s);
-	if (lenn < len)
-		n = lenn + 1;
-	else
-		n = len + 1;
-	dest = malloc(sizeof(*s) * n);
+		return (NULL);
+	n = len;
+	if ((unsigned int)ft_strlen(s) < len)
+		n = (unsigned int)ft_strlen(s) + 1;
+	dest = malloc(sizeof(*s) * (n + 1));
 	if (!dest)
-		return (NULL);	
+		return (NULL);
+	if ((unsigned int)ft_strlen(s) <= start)
+	{
+		dest[0] = 0;
+		return (dest);
+	}
 	i = 0;
 	while (s[i + start] && ((i + start) < (len + start)))
 	{

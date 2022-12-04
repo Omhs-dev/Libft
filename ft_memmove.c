@@ -6,28 +6,27 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:46:53 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 18:39:34 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:37:06 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
 	char	*des ;
 	char	*sr;
 
 	des = (char *)dst;
 	sr = (char *)src;
+	if (!dst && !src)
+		return (NULL);
 	if (des > sr)
 	{
-		i = (int)len - 1;
-		while (i >= 0)
+		while (len > 0)
 		{
-			des[i] = sr[i];
-			i--;
+			des[len - 1] = sr[len - 1];
+			len--;
 		}
 	}
 	ft_memcpy(des, sr, len);

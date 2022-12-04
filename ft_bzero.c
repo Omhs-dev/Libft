@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
@@ -22,8 +21,8 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-        src[i] = '\0';
-        i++;
+		src[i] = '\0';
+		i++;
 	}
 	return ;
 }

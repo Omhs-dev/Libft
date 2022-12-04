@@ -6,11 +6,10 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 01:23:05 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 18:40:06 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:37:51 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>  
 #include "libft.h"
 
 void	*ft_memset(void *ptr, int c, size_t n)

@@ -10,27 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int	n;
 	char	*newsr;
+	int		n;
 
-	n = ft_strlen(s);
-	newsr = (char *)malloc((n + 1) * sizeof(char));
+	n = ft_strlen(s) + 1;
+	newsr = (char *)malloc(n * sizeof(char));
 	if (!newsr)
 		return (NULL);
 	ft_strlcpy(newsr, s, n);
 	return (newsr);
 }
-
-// int main()
-// {
-//     char source[] = "GeeksForGeeks";
-//     char* target = ft_strdup(source);
-//     printf("%s\n", target);
-//     return 0;
-// }
