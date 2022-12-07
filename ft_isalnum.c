@@ -6,11 +6,10 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 22:51:10 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 18:37:59 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 19:35:12 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_isalnum(int an)

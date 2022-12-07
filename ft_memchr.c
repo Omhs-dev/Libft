@@ -6,25 +6,25 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:48:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/20 21:00:20 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 20:59:00 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	*str;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	uc;
 
-	str = (char *)s;
+	str = (unsigned char *)s;
+	uc = (unsigned char)c;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
-		if (c == str[i])
-			return ((char *)str + i);
+		if (uc == str[i])
+			return (str + i);
 		i++;
 	}
 	return (NULL);
@@ -36,7 +36,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // 	const char ch = 'm';
 // 	char *ret;
 
-// 	ret = ft_memchr(str, ch, ft_strlen((char *)str));
+// 	ret = ft_memchr(str, ch, ft_strlen(str));
 // 	printf("String after |%c| is - |%s|\n", ch, ret);
 // 	return (0);
 // }

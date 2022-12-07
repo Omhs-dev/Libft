@@ -6,24 +6,22 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:04:17 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/11/25 16:31:10 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/04 20:57:52 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (c == s[i])
-			return ((char *)s + i);
-		i++;
+		if ((char)c == *s)
+			return ((char *)s);
+		s++;
 	}
+	if ((char)c == *s)
+		return ((char *)s);
 	return (NULL);
 }
 
