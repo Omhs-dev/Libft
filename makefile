@@ -13,6 +13,10 @@ SRCS = ft_isalpha.c ft_isdigit.c \
 	ft_strmapi.c ft_striteri.c ft_itoa.c\
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJ = $(SRCS:.c=.o)
+
+BONUS_SRCS = ft_lstnew.c
+BONUSOBJ = $(BONUS_SRCS:.c=.o)
+
 CFLAGS = -Wall -Wextra -Werror
 CC = clang
 #AR = ar rcs
@@ -29,9 +33,14 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJ) $(BONUSOBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUSOBJ);
+
+.PHONY: all fclean re bonus

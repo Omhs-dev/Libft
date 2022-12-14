@@ -6,17 +6,38 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 20:23:06 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/12/04 19:56:39 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/13 02:24:57 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+char	count_words(char const *str, char dlm)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] != dlm)
+		{
+			count++;
+			while (str[i] != dlm && str[i + 1])
+				i++;
+		}
+		i++;
+	}
+	return (count);
+}
 
 static char	*get_words(char const *str, char dlm)
 {
-	int		j;
-	char	*mem;
 	int		i;
+	char	*mem;
+	int		j;
 
 	i = 0;
 	while (str[i] != dlm && str[i])
@@ -34,51 +55,52 @@ static char	*get_words(char const *str, char dlm)
 	return (mem);
 }
 
-static int	cnt_words(char const *str, char dlm)
+static char	**free_mem(char **str, int dlm)
 {
-	int	count;
-	int	i;
+	while (str)
+		free(str[dlm]);
+		dlm--;
+	free(str);
+	return (NULL);
+}
 
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] != dlm)
-		{
-			count++;
-			while (str[i] != dlm && str[i + 1])
-				i++;
-		}
-		i++;
-	}
-	return (count);
+static char	**mem_fill(char const *str, char d)
+{
+	char	**mem;
+
+	if (!str)
+		return (NULL);
+	mem = (char **)malloc(sizeof(char *) * (count_words(str, d) + 1));
+	if (!mem)
+		return (NULL);
+	return (mem);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**mem;
-	int		i;
-	int		lenn;
+	char	**memm;
+	int		j;
 
-	if (!s)
+	memm = mem_fill(s, c);
+	if (!memm)
 		return (NULL);
-	mem = (char **)malloc((cnt_words(s, c) + 1) * sizeof(char *));
-	if (!mem)
-		return (NULL);
-	i = 0;
-	lenn = 0;
-	while (s[i])
+	while (*s && *s == c)
+		s++;
+	j = 0;
+	while (*s)
 	{
-		if (s[i] && s[i] == c)
-			i++;
-		if (s[i] && s[i] != c)
+		memm[j] = get_words(&*s, c);
+		if (!memm[j])
 		{
-			mem[lenn] = get_words(s + i, c);
-			lenn++;
+			free_mem(memm, j);
+			return (NULL);
 		}
-		while (s[i] && s[i] != c)
-			i++;
+		j++;
+		while (*s && *s != c)
+			s++;
+		while (*s && *s == c)
+			s++;
 	}
-	mem[lenn] = NULL;
-	return (mem);
+	memm[j] = NULL;
+	return (memm);
 }
