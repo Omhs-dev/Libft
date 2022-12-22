@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 21:21:04 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/12/06 00:03:11 by ohamadou         ###   ########.fr       */
+/*   Created: 2022/12/14 04:36:53 by ohamadou          #+#    #+#             */
+/*   Updated: 2022/12/14 05:02:55 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	int	len;
+	t_list	*head;
 
-	len = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)s + len);
-	while (len--)
-	{
-		if ((char)c == s[len])
-			return ((char *)s + len);
-	}
-	return (NULL);
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head -> content = content;
+	head -> next = NULL;
+	return (head);
 }
-
-// int main () {
-//    const char str[] = "mamouth";
-//    const char ch = 'm';
-//    char *ret;
-
-//    ret = ft_strchr(str, ch);
-
-//    printf("String after |%c| is - |%s|\n", ch, ret);
-//    return(0);
-// }

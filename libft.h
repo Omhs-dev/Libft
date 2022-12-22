@@ -6,7 +6,7 @@
 /*   By: ohamadou <ohamadou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:10:30 by ohamadou          #+#    #+#             */
-/*   Updated: 2022/12/04 20:28:26 by ohamadou         ###   ########.fr       */
+/*   Updated: 2022/12/14 04:59:51 by ohamadou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}		t_list;
+
+//bonus part
+t_list	*ft_lstnew(void *content);
 
 int		ft_strlen(const char *str);
 int		ft_isalpha(int a);
